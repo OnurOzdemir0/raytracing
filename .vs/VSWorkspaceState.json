@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Debug",
     "\\rtiow",
-    "\\rtiow\\Debug"
+    "\\rtiow\\Debug\\rtiow.tlog",
+    "\\x64\\Debug"
   ],
   "SelectedNode": "\\rtiow\\main.cpp",
   "PreviewInSolutionExplorer": false
