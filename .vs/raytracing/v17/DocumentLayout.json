@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rtiow\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\vec3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rtiow\\vec3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\vec3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rtiow\\vec3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\ray.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rtiow\\ray.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rtiow\\color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rtiow\\color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\ray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rtiow\\ray.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vec3.cpp",
+              "DocumentMoniker": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\vec3.cpp",
+              "RelativeDocumentMoniker": "rtiow\\vec3.cpp",
+              "ToolTip": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\vec3.cpp",
+              "RelativeToolTip": "rtiow\\vec3.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-01T14:48:58.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "vec3.h",
+              "DocumentMoniker": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\vec3.h",
+              "RelativeDocumentMoniker": "rtiow\\vec3.h",
+              "ToolTip": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\vec3.h",
+              "RelativeToolTip": "rtiow\\vec3.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-01T14:48:44.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ray.cpp",
+              "DocumentMoniker": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\ray.cpp",
+              "RelativeDocumentMoniker": "rtiow\\ray.cpp",
+              "ToolTip": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\ray.cpp",
+              "RelativeToolTip": "rtiow\\ray.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-01T14:11:12.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ray.h",
+              "DocumentMoniker": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\ray.h",
+              "RelativeDocumentMoniker": "rtiow\\ray.h",
+              "ToolTip": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\ray.h",
+              "RelativeToolTip": "rtiow\\ray.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-01T14:11:11.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\main.cpp",
+              "RelativeDocumentMoniker": "rtiow\\main.cpp",
+              "ToolTip": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\main.cpp",
+              "RelativeToolTip": "rtiow\\main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-01T14:10:59.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "color.h",
+              "DocumentMoniker": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\color.h",
+              "RelativeDocumentMoniker": "rtiow\\color.h",
+              "ToolTip": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\color.h",
+              "RelativeToolTip": "rtiow\\color.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-01T14:08:44.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "color.cpp",
+              "DocumentMoniker": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\color.cpp",
+              "RelativeDocumentMoniker": "rtiow\\color.cpp",
+              "ToolTip": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\color.cpp",
+              "RelativeToolTip": "rtiow\\color.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-01T14:08:43.709Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
