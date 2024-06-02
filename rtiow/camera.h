@@ -8,31 +8,28 @@
 
 #include "utility.h"
 #include "hittable.h"
+#include "material.h"
 #include <iostream>
 #include <fstream>
 
 class Camera {
 public:
-    double aspect_ratio = 16.0 / 9.0;  
-    int image_width = 400;   
-    int samples_per_pixel = 100; //antialising
+    double aspect_ratio = 16.0 / 9.0;
+    int image_width = 400;
+    int samples_per_pixel = 100; // anti-aliasing
+    int max_depth = 10; // max ray bounce
 
-    // ----------------- camera move
+    // Camera position and orientation
     vec3 position = point3(0, 0, 0);
     vec3 lookat = point3(0, 0, -1);
     vec3 up = vec3(0, 1, 0);
     double fov = 90.0;
 
-    void render(const Hittable& world, const std::string& file_name) {
-            
-        auto file_ppm = file_name + ".ppm";
-        auto file_bmp = file_name + ".bmp";
-
+    void render(const Hittable& world, const std::string& output_file) {
+        auto file_ppm = output_file + ".ppm";
+        auto file_bmp = output_file + ".bmp";
 
         initialize();
-
-// Output to //Debug/output.ppm
-// use https://www.cs.rhodes.edu/welshc/COMP141_F16/ppmReader.html to view the output image
 
         std::ofstream outfile(file_ppm);
         if (!outfile.is_open()) {
@@ -47,33 +44,28 @@ public:
         for (int j = image_height - 1; j >= 0; --j) {
             std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
             for (int i = 0; i < image_width; ++i) {
-                
+
                 color pixel_color(0, 0, 0);
 
                 for (int s = 0; s < samples_per_pixel; ++s) {
-
                     auto u = (i + random_double()) / (image_width - 1);
                     auto v = (j + random_double()) / (image_height - 1);
                     ray r = get_ray(u, v);
-                    pixel_color += ray_color(r, world);
-
+                    pixel_color += ray_color(r, max_depth, world);
                 }
 
                 pixel_color /= static_cast<double>(samples_per_pixel);
-
-                //write_color(std::cout, pixel_color);
                 write_color(outfile, pixel_color);
             }
         }
 
         std::clog << "\rDone.                 \n";
         outfile.close();
-        
+
         convertPPMtoBMP(file_ppm, file_bmp);
         openBMPFile(file_bmp);
     }
 
-    // ----------------- camera move
     void move(const vec3& direction) {
         position += direction;
         initialize();
@@ -86,10 +78,10 @@ public:
 
 private:
     int image_height;
-    point3 origin;      
-    point3 lower_left_corner; 
-    vec3 horizontal;    
-    vec3 vertical;      
+    point3 origin;
+    point3 lower_left_corner;
+    vec3 horizontal;
+    vec3 vertical;
 
     void initialize() {
         image_height = static_cast<int>(image_width / aspect_ratio);
@@ -114,10 +106,18 @@ private:
         return ray(origin, lower_left_corner + u * horizontal + v * vertical - origin);
     }
 
-    color ray_color(const ray& r, const Hittable& world) const {
+    color ray_color(const ray& r, int depth, const Hittable& world) const {
+        if (depth <= 0)
+            return color(0, 0, 0);
+
         hit_record rec;
-        if (world.hit(r, 0, inf, rec)) {
-            return 0.5 * (rec.normal + color(1, 1, 1));
+
+        if (world.hit(r, 0.001, inf, rec)) {
+            ray scattered;
+            color attenuation;
+            if (rec.mat->scatter(r, rec, attenuation, scattered))
+                return attenuation * ray_color(scattered, depth - 1, world);
+            return color(0, 0, 0);
         }
 
         vec3 unit_direction = unit_vector(r.direction());
@@ -130,8 +130,6 @@ private:
             << static_cast<int>(255.999 * pixel_color.y()) << ' '
             << static_cast<int>(255.999 * pixel_color.z()) << '\n';
     }
-    
-
 };
 
 #endif

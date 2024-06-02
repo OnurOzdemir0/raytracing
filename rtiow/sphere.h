@@ -1,4 +1,3 @@
-#pragma once
 #ifndef SPHERE_H
 #define SPHERE_H
 
@@ -7,7 +6,8 @@
 
 class Sphere : public Hittable {
 public:
-    Sphere(const point3& center, double radius) : center(center), radius(fmax(0, radius)) {}
+    Sphere(const point3& center, double radius, std::shared_ptr<material> m)
+        : center(center), radius(fmax(0, radius)), mat_ptr(m) {}
 
     bool hit(const ray& r, double ray_tmin, double ray_tmax, hit_record& rec) const override {
         vec3 oc = r.origin() - center;
@@ -31,6 +31,7 @@ public:
         rec.p = r.at(rec.t);
         vec3 outward_normal = (rec.p - center) / radius;
         rec.set_face_normal(r, outward_normal);
+        rec.mat = mat_ptr;
 
         return true;
     }
@@ -38,6 +39,7 @@ public:
 private:
     point3 center;
     double radius;
+    std::shared_ptr<material> mat_ptr;
 };
 
 #endif // SPHERE_H
