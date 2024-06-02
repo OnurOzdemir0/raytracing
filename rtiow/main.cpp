@@ -14,10 +14,12 @@ int main() {
 
     // Camera
     Camera cam;
-    cam.aspect_ratio = 16.0 / 9.0; 
+    cam.aspect_ratio = 16.0 / 2.0; 
     cam.image_width = 400; 
-    cam.samples_per_pixel = 100;
-    cam.render(world, "normal_sphere_aa_w400.ppm");
+    cam.samples_per_pixel = 1;
+    cam.render(world, "sa"); // 2 files will be generated, bmp and ppm. 
+    // You can use online PPM viewers
+    // Or directly open bmp using windows photo or most ide
 
     return 0;
 }

@@ -17,13 +17,18 @@ public:
     int image_width = 400;   
     int samples_per_pixel = 100; //antialising
 
-    void render(const Hittable& world, const std::string& output_file) {
+    void render(const Hittable& world, const std::string& file_name) {
+            
+        auto file_ppm = file_name + ".ppm";
+        auto file_bmp = file_name + ".bmp";
+
+
         initialize();
 
 // Output to //Debug/output.ppm
 // use https://www.cs.rhodes.edu/welshc/COMP141_F16/ppmReader.html to view the output image
 
-        std::ofstream outfile(output_file);
+        std::ofstream outfile(file_ppm);
         if (!outfile.is_open()) {
             std::cerr << "Failed to open output file." << std::endl;
             return;
@@ -57,6 +62,9 @@ public:
 
         std::clog << "\rDone.                 \n";
         outfile.close();
+        
+        convertPPMtoBMP(file_ppm, file_bmp);
+        openBMPFile(file_bmp);
     }
 
 private:
