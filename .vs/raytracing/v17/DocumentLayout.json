@@ -62,8 +62,7 @@
               "RelativeToolTip": "rtiow\\utility.h",
               "ViewState": "AQIAAHsAAAAAAAAAAAAAAIUAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-02T17:27:47.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T17:27:47.14Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "rtiow\\material.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-02T17:25:35.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T17:25:35.97Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "rtiow\\interval.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-02T17:25:07.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T17:25:07.997Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "rtiow\\vec3.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-02T10:59:47.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T10:59:47.966Z"
             },
             {
               "$type": "Document",
@@ -114,8 +110,7 @@
               "RelativeToolTip": "rtiow\\sphere.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-02T10:59:41.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T10:59:41.837Z"
             },
             {
               "$type": "Document",
@@ -125,7 +120,7 @@
               "RelativeDocumentMoniker": "rtiow\\main.cpp",
               "ToolTip": "D:\\ozu_3.2\\CS350\\proj\\raytracing\\rtiow\\main.cpp",
               "RelativeToolTip": "rtiow\\main.cpp",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAswB8AAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-02T10:59:28.221Z",
               "EditorCaption": ""
@@ -140,8 +135,7 @@
               "RelativeToolTip": "rtiow\\hittable_list.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-02T10:59:27.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T10:59:27.214Z"
             },
             {
               "$type": "Document",
@@ -153,8 +147,7 @@
               "RelativeToolTip": "rtiow\\hittable.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-02T10:59:25.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T10:59:25.403Z"
             },
             {
               "$type": "Document",
@@ -166,8 +159,7 @@
               "RelativeToolTip": "rtiow\\color.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-02T10:59:16.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T10:59:16.113Z"
             },
             {
               "$type": "Document",
@@ -179,8 +171,7 @@
               "RelativeToolTip": "rtiow\\camera.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-02T10:59:11.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T10:59:11.505Z"
             }
           ]
         }
