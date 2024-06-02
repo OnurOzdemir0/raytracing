@@ -5,9 +5,12 @@
 #include "ray.h"
 #include "vec3.h"
 
+class material;
+
 struct hit_record {
     point3 p; // intersection point
     vec3 normal; // normal vector of point p and ray r
+    shared_ptr<material> mat; //hit rec for material pointer
     double t; // distance along ray
     bool front_face; // is normal facing the ray
 

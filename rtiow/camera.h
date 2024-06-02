@@ -8,6 +8,7 @@
 
 #include "utility.h"
 #include "hittable.h"
+#include "material.h"
 #include <iostream>
 #include <fstream>
 
@@ -16,6 +17,7 @@ public:
     double aspect_ratio = 16.0 / 9.0;  
     int image_width = 400;   
     int samples_per_pixel = 100; //antialising
+    int    max_depth = 10; //max ray bounce
 
     void render(const Hittable& world, const std::string& output_file) {
         initialize();
@@ -44,7 +46,7 @@ public:
                     auto u = (i + random_double()) / (image_width - 1);
                     auto v = (j + random_double()) / (image_height - 1);
                     ray r = get_ray(u, v);
-                    pixel_color += ray_color(r, world);
+                    pixel_color += ray_color(r, max_depth, world);
 
                 }
 
@@ -84,10 +86,21 @@ private:
         return ray(origin, lower_left_corner + u * horizontal + v * vertical - origin);
     }
 
-    color ray_color(const ray& r, const Hittable& world) const {
+    color ray_color(const ray& r, int depth, const Hittable& world) const {
+        if (depth <= 0)
+            return color(0, 0, 0);
+
         hit_record rec;
-        if (world.hit(r, 0, inf, rec)) {
-            return 0.5 * (rec.normal + color(1, 1, 1));
+
+        if (world.hit(r, 0.001, inf, rec)) {
+            ray scattered;
+            color attenuation;
+            if (rec.mat->scatter(r, rec, attenuation, scattered))
+                return attenuation * ray_color(scattered, depth - 1, world);
+            return color(0, 0, 0); //color with scattered reflect
+
+            /* vec3 direction = rec.normal + random_unit_vector(); //diffusion
+            return 0.9 * ray_color(ray(rec.p, direction), depth - 1, world); //change the multiplier for darker color */
         }
 
         vec3 unit_direction = unit_vector(r.direction());

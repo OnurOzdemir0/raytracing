@@ -1,2 +1,4 @@
-﻿  color.cpp
-  rtiow.vcxproj -> C:\OZU\3.2\cs350\proj\rtiow\x64\Debug\rtiow.exe
+﻿  main.cpp
+C:\Users\selam\source\repos\raytracing\rtiow\material.h(8,17): warning C4099: 'hit_record': type name first seen using 'struct' now seen using 'class'
+C:\Users\selam\source\repos\raytracing\rtiow\hittable.h(10): message : see declaration of 'hit_record'
+  rtiow.vcxproj -> C:\Users\selam\source\repos\raytracing\x64\Debug\rtiow.exe
