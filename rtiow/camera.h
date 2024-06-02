@@ -14,7 +14,8 @@
 class Camera {
 public:
     double aspect_ratio = 16.0 / 9.0;  
-    int image_width = 400;           
+    int image_width = 400;   
+    int samples_per_pixel = 100; //antialising
 
     void render(const Hittable& world, const std::string& output_file) {
         initialize();
@@ -35,10 +36,20 @@ public:
         for (int j = image_height - 1; j >= 0; --j) {
             std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
             for (int i = 0; i < image_width; ++i) {
-                auto u = double(i) / (image_width - 1);
-                auto v = double(j) / (image_height - 1);
-                ray r = get_ray(u, v);
-                color pixel_color = ray_color(r, world);
+                
+                color pixel_color(0, 0, 0);
+
+                for (int s = 0; s < samples_per_pixel; ++s) {
+
+                    auto u = (i + random_double()) / (image_width - 1);
+                    auto v = (j + random_double()) / (image_height - 1);
+                    ray r = get_ray(u, v);
+                    pixel_color += ray_color(r, world);
+
+                }
+
+                pixel_color /= static_cast<double>(samples_per_pixel);
+
                 //write_color(std::cout, pixel_color);
                 write_color(outfile, pixel_color);
             }
