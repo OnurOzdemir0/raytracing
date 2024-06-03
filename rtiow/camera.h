@@ -2,7 +2,6 @@
 //      we do not need to use such a complicated and expensive approach.
 
 // Instead, we use camera as the ray source. For each pixel, a ray is casted from the camera to the pixel's center. 
-
 #ifndef CAMERA_H
 #define CAMERA_H
 
@@ -11,6 +10,9 @@
 #include "material.h"
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <thread>
+#include <mutex>
 
 class Camera {
 public:
@@ -31,35 +33,37 @@ public:
 
         initialize();
 
+        std::vector<std::vector<color>> framebuffer(image_height, std::vector<color>(image_width));
+
+        std::vector<std::thread> threads;
+        std::mutex log_mutex;
+
+        for (int j = image_height - 1; j >= 0; --j) {
+            threads.emplace_back(&Camera::render_scanline, this, j, std::ref(world), std::ref(framebuffer[j]), std::ref(log_mutex));
+        }
+
+        for (auto& t : threads) {
+            if (t.joinable()) {
+                t.join();
+            }
+        }
+
+        std::clog << "\rDone.                 \n";
+
         std::ofstream outfile(file_ppm);
         if (!outfile.is_open()) {
             std::cerr << "Failed to open output file." << std::endl;
             return;
         }
 
-        std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
         outfile << "P3\n" << image_width << ' ' << image_height << "\n255\n";
 
-        // Render pixels
         for (int j = image_height - 1; j >= 0; --j) {
-            std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
             for (int i = 0; i < image_width; ++i) {
-
-                color pixel_color(0, 0, 0);
-
-                for (int s = 0; s < samples_per_pixel; ++s) {
-                    auto u = (i + random_double()) / (image_width - 1);
-                    auto v = (j + random_double()) / (image_height - 1);
-                    ray r = get_ray(u, v);
-                    pixel_color += ray_color(r, max_depth, world);
-                }
-
-                pixel_color /= static_cast<double>(samples_per_pixel);
-                write_color(outfile, pixel_color);
+                write_color(outfile, framebuffer[j][i]);
             }
         }
 
-        std::clog << "\rDone.                 \n";
         outfile.close();
 
         convertPPMtoBMP(file_ppm, file_bmp);
@@ -123,6 +127,25 @@ private:
         vec3 unit_direction = unit_vector(r.direction());
         auto t = 0.5 * (unit_direction.y() + 1.0);
         return (1.0 - t) * color(1.0, 1.0, 1.0) + t * color(0.5, 0.7, 1.0);
+    }
+
+    void render_scanline(int j, const Hittable& world, std::vector<color>& scanline, std::mutex& log_mutex) {
+        for (int i = 0; i < image_width; ++i) {
+            color pixel_color(0, 0, 0);
+
+            for (int s = 0; s < samples_per_pixel; ++s) {
+                auto u = (i + random_double()) / (image_width - 1);
+                auto v = (j + random_double()) / (image_height - 1);
+                ray r = get_ray(u, v);
+                pixel_color += ray_color(r, max_depth, world);
+            }
+
+            pixel_color /= static_cast<double>(samples_per_pixel);
+            scanline[i] = pixel_color;
+        }
+
+        std::lock_guard<std::mutex> log_lock(log_mutex);
+        std::clog << "\rScanlines remaining: " << j << ' ' << std::flush;
     }
 
     void write_color(std::ostream& out, color pixel_color) const {

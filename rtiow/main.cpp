@@ -23,7 +23,7 @@ int main() {
     Camera cam;
     cam.aspect_ratio = 16.0 / 9.0;
     cam.image_width = 1080;
-    cam.samples_per_pixel = 1;
-    cam.max_depth = 20;
-    cam.render(world, "depth6");
+    cam.samples_per_pixel = 100;
+    cam.max_depth = 50;
+    cam.render( world, "output2" );
 }
